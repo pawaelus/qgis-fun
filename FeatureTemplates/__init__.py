@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- MyPlug2
+ FeatureTemplates
                                  A QGIS plugin
  test
                              -------------------
-        begin                : 2017-11-14
-        copyright            : (C) 2017 by dfs
-        email                : fsdf
+        begin                : 2017-11-17
+        copyright            : (C) 2017 by fake
+        email                : fake
         git sha              : $Format:%H$
  ***************************************************************************/
 
@@ -25,11 +25,11 @@
 
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name
-    """Load MyPlug2 class from file MyPlug2.
+    """Load FeatureTemplates class from file FeatureTemplates.
 
     :param iface: A QGIS interface instance.
     :type iface: QgsInterface
     """
     #
-    from .myplug2 import MyPlug2
-    return MyPlug2(iface)
+    from .feature_template import FeatureTemplates
+    return FeatureTemplates(iface)

@@ -1,7 +1,7 @@
 Plugin Builder Results
 
-Your plugin MyPlug2 was created in:
-    C:\Users\pisera\.qgis2\python\plugins\MyPlug2
+Your plugin FeatureTemplates was created in:
+    C:\Users\pisera\.qgis2\python\plugins\FeatureTemplates
 
 Your QGIS plugin directory is located at:
     C:/Users/pisera/.qgis2/python/plugins
@@ -17,11 +17,11 @@ What's Next:
 
   * Test the plugin by enabling it in the QGIS plugin manager
 
-  * Customize it by editing the implementation file: ``myplug2.py``
+  * Customize it by editing the implementation file: ``feature_template.py``
 
   * Create your own custom icon, replacing the default icon.png
 
-  * Modify your user interface by opening MyPlug2.ui in Qt Designer
+  * Modify your user interface by opening FeatureTemplates.ui in Qt Designer
 
   * You can use the Makefile to compile your Ui and resource files when
     you make changes. This requires GNU make (gmake)

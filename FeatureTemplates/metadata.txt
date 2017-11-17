@@ -7,17 +7,17 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=My Plug2
+name=Feature Templates
 qgisMinimumVersion=2.0
 description=test
 version=0.1
-author=dfs
-email=fsdf
+author=fake
+email=fake
 
-about=dyrdy
+about=fake
 
-tracker=teest
-repository=tes
+tracker=fake
+repository=fake
 # End of mandatory metadata
 
 # Recommended items:
@@ -26,9 +26,9 @@ repository=tes
 # changelog=
 
 # Tags are comma separated with spaces allowed
-tags=sts
+tags=fake
 
-homepage=tests
+homepage=fake
 category=Plugins
 icon=icon.png
 # experimental flag

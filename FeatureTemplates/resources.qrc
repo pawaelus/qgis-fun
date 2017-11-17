@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/plugins/MyPlug2" >
+    <qresource prefix="/plugins/FeatureTemplates" >
         <file>icon.png</file>
     </qresource>
 </RCC>

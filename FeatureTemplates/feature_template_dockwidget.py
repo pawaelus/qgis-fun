@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- MyPlug2DockWidget
+ FeatureTemplatesDockWidget
                                  A QGIS plugin
  test
                              -------------------
-        begin                : 2017-11-14
+        begin                : 2017-11-17
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by dfs
-        email                : fsdf
+        copyright            : (C) 2017 by fake
+        email                : fake
  ***************************************************************************/
 
 /***************************************************************************
@@ -27,16 +27,28 @@ from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'myplug2_dockwidget_base.ui'))
+    os.path.dirname(__file__), 'feature_template_dockwidget_base.ui'))
+items = {
+    "water pipe - 100mm":
+        {
+            "type": "water pipe",
+            "size": 100
+        },
+    "sewer pipe - 200mm":
+        {
+            "type": "sewer pipe",
+            "size": 200
+        }
+}
 
-
-class MyPlug2DockWidget(QtGui.QDockWidget, FORM_CLASS):
+class FeatureTemplatesDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     closingPlugin = pyqtSignal()
 
+
     def __init__(self, parent=None):
         """Constructor."""
-        super(MyPlug2DockWidget, self).__init__(parent)
+        super(FeatureTemplatesDockWidget, self).__init__(parent)
         # Set up the user interface from Designer.
         # After setupUI you can access any designer object by doing
         # self.<objectname>, and you can use autoconnect slots - see
@@ -47,4 +59,9 @@ class MyPlug2DockWidget(QtGui.QDockWidget, FORM_CLASS):
     def closeEvent(self, event):
         self.closingPlugin.emit()
         event.accept()
+
+    def load_items(self):
+        self.templatesList.clear()
+        for key in items:
+            self.templatesList.addItem(key)	
 

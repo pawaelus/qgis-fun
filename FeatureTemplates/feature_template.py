@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- MyPlug2
+ FeatureTemplates
                                  A QGIS plugin
  test
                               -------------------
-        begin                : 2017-11-14
+        begin                : 2017-11-17
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by dfs
-        email                : fsdf
+        copyright            : (C) 2017 by fake
+        email                : fake
  ***************************************************************************/
 
 /***************************************************************************
@@ -26,11 +26,11 @@ from PyQt4.QtGui import QAction, QIcon
 import resources
 
 # Import the code for the DockWidget
-from myplug2_dockwidget import MyPlug2DockWidget
+from feature_template_dockwidget import FeatureTemplatesDockWidget
 import os.path
 
 
-class MyPlug2:
+class FeatureTemplates:
     """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
@@ -52,7 +52,7 @@ class MyPlug2:
         locale_path = os.path.join(
             self.plugin_dir,
             'i18n',
-            'MyPlug2_{}.qm'.format(locale))
+            'FeatureTemplates_{}.qm'.format(locale))
 
         if os.path.exists(locale_path):
             self.translator = QTranslator()
@@ -63,12 +63,12 @@ class MyPlug2:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&My Plug2')
+        self.menu = self.tr(u'&Feature Templates')
         # TODO: We are going to let the user set this up in a future iteration
-        self.toolbar = self.iface.addToolBar(u'MyPlug2')
-        self.toolbar.setObjectName(u'MyPlug2')
+        self.toolbar = self.iface.addToolBar(u'FeatureTemplates')
+        self.toolbar.setObjectName(u'FeatureTemplates')
 
-        #print "** INITIALIZING MyPlug2"
+        #print "** INITIALIZING FeatureTemplates"
 
         self.pluginIsActive = False
         self.dockwidget = None
@@ -87,7 +87,7 @@ class MyPlug2:
         :rtype: QString
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
-        return QCoreApplication.translate('MyPlug2', message)
+        return QCoreApplication.translate('FeatureTemplates', message)
 
 
     def add_action(
@@ -167,10 +167,10 @@ class MyPlug2:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/MyPlug2/icon.png'
+        icon_path = ':/plugins/FeatureTemplates/icon.png'
         self.add_action(
             icon_path,
-            text=self.tr(u'TESTER'),
+            text=self.tr(u'Feature Templates'),
             callback=self.run,
             parent=self.iface.mainWindow())
 
@@ -179,7 +179,7 @@ class MyPlug2:
     def onClosePlugin(self):
         """Cleanup necessary items here when plugin dockwidget is closed"""
 
-        #print "** CLOSING MyPlug2"
+        #print "** CLOSING FeatureTemplates"
 
         # disconnects
         self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
@@ -196,11 +196,11 @@ class MyPlug2:
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
 
-        #print "** UNLOAD MyPlug2"
+        #print "** UNLOAD FeatureTemplates"
 
         for action in self.actions:
             self.iface.removePluginMenu(
-                self.tr(u'&My Plug2'),
+                self.tr(u'&Feature Templates'),
                 action)
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
@@ -214,14 +214,14 @@ class MyPlug2:
         if not self.pluginIsActive:
             self.pluginIsActive = True
 
-            #print "** STARTING MyPlug2"
+            #print "** STARTING FeatureTemplates"
 
             # dockwidget may not exist if:
             #    first run of plugin
             #    removed on close (see self.onClosePlugin method)
             if self.dockwidget == None:
                 # Create the dockwidget (after translation) and keep reference
-                self.dockwidget = MyPlug2DockWidget()
+                self.dockwidget = FeatureTemplatesDockWidget()
 
             # connect to provide cleanup on closing of dockwidget
             self.dockwidget.closingPlugin.connect(self.onClosePlugin)
@@ -230,4 +230,5 @@ class MyPlug2:
             # TODO: fix to allow choice of dock location
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
             self.dockwidget.show()
+            self.dockwidget.load_items()
 
