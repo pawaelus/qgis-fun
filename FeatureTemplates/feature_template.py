@@ -173,7 +173,16 @@ class FeatureTemplates:
             text=self.tr(u'Feature Templates'),
             callback=self.run,
             parent=self.iface.mainWindow())
+    def apply_template(self, name, fields):
+        layer = self.iface.activeLayer()
+        features = layer.selectedFeatures()
+        print "test apply"
+        for feature in features:
+            for field, value in fields.itervalues():
+                feature[field] = value
+                layer.updateFeature(feature)
 
+        self.iface.mapCanvas().refresh()
     #--------------------------------------------------------------------------
 
     def onClosePlugin(self):

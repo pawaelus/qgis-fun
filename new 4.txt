@@ -1,0 +1,41 @@
+{
+	"clouds": {
+		"all": 90
+	},
+	"name": "Rzgow",
+	"visibility": 2600,
+	"sys": {
+		"country": "PL",
+		"sunset": 1508600135,
+		"message": 0.0021,
+		"type": 1,
+		"id": 5358,
+		"sunrise": 1508563007
+	},
+	"weather": [{
+			"main": "Mist",
+			"id": 701,
+			"icon": "50n",
+			"description": "brume"
+		}
+	],
+	"coord": {
+		"lat": 51.67,
+		"lon": 19.49
+	},
+	"base": "stations",
+	"dt": 1508549400,
+	"main": {
+		"pressure": 1014,
+		"temp_min": 11,
+		"temp_max": 11,
+		"temp": 11,
+		"humidity": 100
+	},
+	"id": 7302565,
+	"wind": {
+		"speed": 1.5,
+		"deg": 160
+	},
+	"cod": 200
+}

@@ -6,17 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
-    <height>439</height>
+    <width>305</width>
+    <height>555</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Feature Templates</string>
   </property>
   <widget class="QWidget" name="dockWidgetContents">
+   <property name="maximumSize">
+    <size>
+     <width>482</width>
+     <height>533</height>
+    </size>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QTabWidget" name="tabWidget">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -33,60 +39,57 @@
        <bool>false</bool>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="test">
-       <widget class="QPushButton" name="newButton">
+      <widget class="QWidget" name="tabWidgetPage1" native="true">
+       <attribute name="title">
+        <string/>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="newButton">
+          <property name="text">
+           <string>New</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="templatesList"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="applyButton">
+          <property name="text">
+           <string>Apply</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabWidgetPage2" native="true">
+       <attribute name="title">
+        <string/>
+       </attribute>
+       <widget class="QPushButton" name="mybutton">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>50</y>
-          <width>93</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>New</string>
-        </property>
-       </widget>
-       <widget class="QListWidget" name="templatesList">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
+          <x>40</x>
           <y>40</y>
-          <width>256</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="applyButton">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>140</y>
-          <width>93</width>
-          <height>28</height>
+          <width>75</width>
+          <height>23</height>
          </rect>
         </property>
         <property name="text">
-         <string>Apply</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="deleteButton">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>90</y>
-          <width>93</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Delete</string>
+         <string>PushButton</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="test2"/>
      </widget>
     </item>
    </layout>
